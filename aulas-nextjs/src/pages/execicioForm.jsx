@@ -5,7 +5,8 @@ export default function Form() {
         nome: "",
         descricao: "",
         preco: 0,
-        categoria: ""
+        categoria: "",
+        data: new Date().toLocaleString()
     });
 
     const handleChange = (e) => {
@@ -14,9 +15,9 @@ export default function Form() {
             ...form,
             [name]: value,
         });
-        console.log(form);
+        
     }
-
+    console.log(form);
     return (
         <div className="flex w-full min-h-screen bg-gray-700 justify-center items-center">
             <div className="flex w-2/4 min-h-full items-center justify-between">
@@ -70,7 +71,8 @@ export default function Form() {
                             id="categorias"
                             onChange={handleChange}
                             required
-                        >                     
+                        >      <option className="text-black px-2 rounded-md" value="">                 
+                            </option>               
                             <option className="text-black px-2 rounded-md" value="eletronico">
                                 Eletrônicos
                             </option>
