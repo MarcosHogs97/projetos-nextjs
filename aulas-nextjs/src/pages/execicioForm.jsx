@@ -1,45 +1,22 @@
-function cadastrarProduto() {
-    // Coletar os dados do formulário
-    const nome = document.getElementById('nome').value;
-    const descricao = document.getElementById('descricao').value;
-    const preco = document.getElementById('preco').value;
-    const categoria = document.getElementById('categorias').value;
+import { useState } from "react";
 
-    // Obter a data e hora atual
-    const dataHora = new Date().toLocaleString();
+export default function Form() {
+    const [form, setForm] = useState({
+        nome: "",
+        descricao: "",
+        preco: 0,
+        categoria: ""
+    });
 
-    // Criar um objeto com os dados e a data/hora
-    const produto = {
-        nome,
-        descricao,
-        preco,
-        categoria,
-        dataHora,
-    };
-
-    // Ler os dados existentes (se houver)
-    let produtos = [];
-    const produtosJSON = localStorage.getItem('produtos');
-    if (produtosJSON) {
-        produtos = JSON.parse(produtosJSON);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm({
+            ...form,
+            [name]: value,
+        });
+        console.log(form);
     }
 
-    // Adicionar o novo produto à lista de produtos
-    produtos.push(produto);
-
-    // Salvar a lista de produtos atualizada no armazenamento local
-    localStorage.setItem('produtos', JSON.stringify(produtos));
-
-    alert("Produto cadastrado com sucesso")
-
-    // Limpar o formulário
-    document.getElementById('nome').value = '';
-    document.getElementById('descricao').value = '';
-    document.getElementById('preco').value = '';
-    document.getElementById('categorias').value = '';
-}
-
-export default function form() {
     return (
         <div className="flex w-full min-h-screen bg-gray-700 justify-center items-center">
             <div className="flex w-2/4 min-h-full items-center justify-between">
@@ -55,6 +32,8 @@ export default function form() {
                             type="text"
                             name="nome"
                             id="nome"
+                            onChange={handleChange}
+                            placeholder="Nome do produto"
                         />
                     </label>
 
@@ -66,6 +45,8 @@ export default function form() {
                             id="descricao"
                             cols="30"
                             rows="10"
+                            onChange={handleChange}
+                            placeholder="Informações sobre o produto"
                         ></textarea>
                     </label>
 
@@ -76,6 +57,8 @@ export default function form() {
                             type="text"
                             name="preco"
                             id="preco"
+                            onChange={handleChange}
+                            placeholder="0.00"
                         />
                     </label>
 
@@ -83,9 +66,11 @@ export default function form() {
                         Categorias:
                         <select
                             className="text-black px-2 rounded-md ms-3 w-5/6"
-                            name="categorias"
+                            name="categoria"
                             id="categorias"
-                        >
+                            onChange={handleChange}
+                            required
+                        >                     
                             <option className="text-black px-2 rounded-md" value="eletronico">
                                 Eletrônicos
                             </option>
@@ -102,7 +87,6 @@ export default function form() {
                     </label>
                     <button
                         type="button"
-                        onClick={cadastrarProduto}
                         className="px-3 py-2 w-3/6 rounded-md bg-white text-black"
                     >
                         Cadastrar
