@@ -1,0 +1,31 @@
+.meuDevTipos{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ 
+}
+.tiposBox{
+    display: flex;
+    gap: 35px;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    flex: 1 1 450px;
+    flex-wrap: wrap;
+}
+.conteudo{
+    display: flex;
+    gap: 35px;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.conteudo p {
+    width: 300px;
+}
+@media (max-width: 901px) {
+    .conteudo{
+        width: 100%;
+    }
+}
