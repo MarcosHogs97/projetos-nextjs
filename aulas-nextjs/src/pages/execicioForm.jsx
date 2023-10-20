@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Form() {
+    
     const [form, setForm] = useState({
         nome: "",
         descricao: "",
@@ -17,19 +18,19 @@ export default function Form() {
         });
         
     }
-    console.log(form);
+    
     return (
         <div className="flex w-full min-h-screen bg-gray-700 justify-center items-center">
-            <div className="flex w-2/4 min-h-full items-center justify-between">
+            <div className="flex w-full lg:w-3/6 min-h-full items-center justify-between">
                 <form
                     action=""
                     className="flex w-full items-center flex-col gap-4 text-justify font-semibold rounded-md bg-slate-950 px-5 py-4"
                 >
-                    <h2>Cadastro de produtos</h2>
-                    <label className="flex items-center w-3/6" htmlFor="nome">
+                    <h2 className="text-4xl font-semibold">Cadastro de produtos</h2>
+                    <label className="flex items-center w-3/4 justify-between" htmlFor="nome">
                         Nome:
                         <input
-                            className="text-black px-2 rounded-md ms-9 w-5/6"
+                            className="text-black px-2 rounded-md  w-5/6"
                             type="text"
                             name="nome"
                             id="nome"
@@ -38,10 +39,10 @@ export default function Form() {
                         />
                     </label>
 
-                    <label className="flex items-center w-3/6" htmlFor="descricao">
+                    <label className="flex items-center w-3/4 justify-between" htmlFor="descricao">
                         Descrição:
                         <textarea
-                            className="text-black px-2 rounded-md ms-3 w-5/6"
+                            className="text-black px-2 rounded-md  w-5/6"
                             name="descricao"
                             id="descricao"
                             cols="30"
@@ -51,10 +52,10 @@ export default function Form() {
                         ></textarea>
                     </label>
 
-                    <label className="flex items-center w-3/6" htmlFor="preco">
+                    <label className="flex items-center w-3/4 justify-between" htmlFor="preco">
                         Preço:
                         <input
-                            className="text-black px-2 rounded-md ms-9 w-5/6"
+                            className="text-black px-2 rounded-md  w-5/6"
                             type="text"
                             name="preco"
                             id="preco"
@@ -63,10 +64,10 @@ export default function Form() {
                         />
                     </label>
 
-                    <label className="flex items-center w-3/6" htmlFor="categorias">
+                    <label className="flex items-center w-3/4 justify-between" htmlFor="categorias">
                         Categorias:
                         <select
-                            className="text-black px-2 rounded-md ms-3 w-5/6"
+                            className="text-black px-2 rounded-md w-5/6"
                             name="categoria"
                             id="categorias"
                             onChange={handleChange}
@@ -97,4 +98,5 @@ export default function Form() {
             </div>
         </div>
     );
+    
 }
