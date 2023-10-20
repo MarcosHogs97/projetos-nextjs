@@ -1,6 +1,10 @@
-.tiposDesenvolvedor{
+.tiposDev{
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    align-items: center; 
-}
+    min-width: 100%;
+    min-height: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+};

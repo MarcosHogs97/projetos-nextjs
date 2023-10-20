@@ -1,0 +1,13 @@
+.devSubtitulos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.devSubtitulos h3 {
+    width: 300px;
+    text-align: center;
+    font-size: x-large;
+}

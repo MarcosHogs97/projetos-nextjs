@@ -1,0 +1,15 @@
+.descricao {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    flex: 1 1 200px;
+    flex-wrap: wrap;
+}
+.descricao p {
+    width: 300px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    text-align: justify;
+    
+}
