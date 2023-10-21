@@ -6,7 +6,11 @@ import style from "../../styles/compsDev/imagens.module.css";
 
 export default function Imagens() {
   const imageStyle = {
-    objectFit: 'contain'
+    objectFit: 'contain',
+    borderRadius: '100%',
+    backgroundColor: 'rgba(255, 255, 255',
+    backgroundPosition: 'center'
+    
   }
   return (
     <>
