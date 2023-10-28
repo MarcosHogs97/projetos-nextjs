@@ -1,12 +1,12 @@
-import Filho from "./filho";
+import Filho from "../direta/Filho";
 
-export default function Pai(props){
-    return(
-        <div>
-            <h1>Familia {props.familia}</h1>
-            <Filho nome="Pedro" familia={props.familia}/>
-            <Filho nome="Joana" familia={props.familia}/>
-            <Filho {...props} nome="Gabriel" />
-        </div>
-    )
+export default function Pai(props) {
+  return (
+    <div>
+      <Filho nome="Carlos" familia="Albuquerque" />
+      <Filho nome="Pedro" familia="Santos" />
+      <Filho nome="Joana" familia="Albuquerque" />
+      <Filho nome="Maria" familia="Santos" />
+    </div>
+  );
 }
